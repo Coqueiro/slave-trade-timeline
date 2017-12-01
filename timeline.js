@@ -92,7 +92,7 @@ function ChangeDescription(year) {
 
 function WikipediaBlurb(page, section) {
   $('#description').wikiblurb({
-    wikiURL: "http://pt.wikipedia.org/",
+    wikiURL: "https://pt.wikipedia.org/",
     apiPath: 'w',
     section: section,
     page: page,
