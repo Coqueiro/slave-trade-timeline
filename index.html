@@ -1,0 +1,84 @@
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/page.css" type="text/css">
+</head>
+<!DOCTYPE html>
+<meta charset="utf-8">
+<body>
+    <div class="container-fluid">
+        <div id="graph-panel" class="panel panel-default" style="float: left; width:50%">
+            <img id="arrow" src="imgs/2000px-Dark_Green_Arrow_Down.svg.png" style="position: relative; width: 20px; height: 20px">
+            <div id="timeline" style="position: inline-block"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="stepBackward" class="col-sm-1">
+                        <button name="ButtonStepBackward" 
+                                class="btn btn-default"
+                                onclick="ButtonStepBackward()"><span class="glyphicon glyphicon-step-backward"></span></button>
+                    </div>
+                    <div id="backward" class="col-sm-1">
+                        <button name="ButtonBackward" 
+                                class="btn btn-default"
+                                onclick="ButtonBackward()"><span class="glyphicon glyphicon-backward"></span></button>
+                    </div>
+                    <div id="play" class="col-sm-1">
+                        <button name="ButtonPlay"
+                                class="btn btn-default"
+                                onclick="ButtonPlay()"><span class="glyphicon glyphicon-play"></span></button>
+                    </div>
+                    <div id="forward" class="col-sm-1">
+                        <button name="ButtonForward" 
+                                class="btn btn-default"
+                                onclick="ButtonForward()"><span class="glyphicon glyphicon-forward"></span></button>
+                    </div>
+                    <div id="stepForward" class="col-sm-1">
+                        <button name="ButtonStepForward" 
+                                class="btn btn-default"
+                                onclick="ButtonStepForward()"><span class="glyphicon glyphicon-step-forward"></span></button>
+                    </div>
+                    <div id="ButtonReset" class="col-sm-1">
+                        <button name="ButtonReset" 
+                                class="btn btn-default"
+                                onclick="ButtonReset()"><span class="glyphicon glyphicon-refresh"></span></button>
+                    </div>
+                    <div id="DescButton" class="col-sm-4">
+                        <button name="DescButton" 
+                                class="btn btn-default"
+                                onclick="ButtonDescription()">Não pausar a cada evento</button>
+                    </div>
+                </div>
+            </div>
+            </br>
+            <div class="container-fluid">
+                <div class="row">
+                    <h3 class="col-sm-6">Desembarques:</h3>
+                    <h3 class="col-sm">Ano:</h3>
+                </div>
+                <div class="row">
+                    <h4 id="slaveQuantity" class="col-sm-6">0</h4>
+                    <h4 id="year" class="col-sm">1560</h4>
+                </div>
+            </div>
+            <div id="map" style="position: relative; width: 80%; height: 60%;"></div>
+        </div>
+        <div id="text-panel" style="float: left; position: relative; padding-left:10%; width:50%">
+            </br></br></br></br></br>
+            <h3 id="title-event"><span class="glyphicon glyphicon-book"></span>  Carregando...</h3>
+            </br>
+            <div class="row">
+                <img id="description-image" width=80% height=30% src = "imgs/loading.jpg"></div>
+            <div class="row" style="padding-right:20%">
+                <h5 id="description">Carregando...</h5>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.csv.js"></script>
+    <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="js/topojson.min.js"></script>
+    <script type="text/javascript" src="js/datamaps.bra.min.js"></script>
+    <script type="text/javascript" src="js/timeknots-modified.js"></script>
+    <script type="text/javascript" src="js/jquery.wikiblurb.js"></script>
+    <script type="text/javascript" src="timeline.js"></script>
+</body>

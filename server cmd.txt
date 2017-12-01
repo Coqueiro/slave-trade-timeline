@@ -1,0 +1,1 @@
+http-server "C:\Users\kartg\Desktop\Estudos\Mestrado FGV\Visualização de Dados\Trabalho 5\Script" -c-1 -a localhost -p 8000

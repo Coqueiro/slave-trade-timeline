@@ -1,0 +1,31 @@
+body {
+    position: relative;
+    margin: 1%;
+    width: 100%;
+}
+.corner {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    z-index: -1;
+}
+.nw {
+    background: red;
+    left: 0;
+    top: 0;
+}
+.ne {
+    background: green;
+    right: 0;
+    top: 0;
+}
+.sw {
+    background: blue;
+    left: 0;
+    bottom: 0;
+}
+.se {
+    background: black;
+    right: 0;
+    bottom: 0;
+}
