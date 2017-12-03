@@ -202,19 +202,25 @@ var TimeKnots = {
         var format = d3.time.format(cfg.labelFormat);
         var labels = [];
         for(var i=0; i<timestamps.length; i++) {
+          var x_value = Number(elements[i].getAttribute("cx")) - Number(elements[i].getAttribute("r"))-Number(elements[i].getAttribute("stroke-width"));
+          var y_value = 10+Number(elements[i].getAttribute("cy")) + Number(elements[i].getAttribute("r")) + Number(elements[i].getAttribute("stroke-width"));
           svg.append("text")
             .text(format(new Date(timestamps[i]))).style("font-size", "70%")
-          .attr("x", Number(elements[i].getAttribute("cx")) - Number(elements[i].getAttribute("r"))-Number(elements[i].getAttribute("stroke-width")))
-          .attr("y", 20+Number(elements[i].getAttribute("cy")) + Number(elements[i].getAttribute("r")) + Number(elements[i].getAttribute("stroke-width")));
+          .attr("x", x_value)
+          .attr("y", y_value)
+          .attr("transform", "rotate(45," + x_value + "," + y_value +")");
         }
       }else{
         var format = function(d){return d};
         var labels = [];
         for(var i=0; i<timestamps.length; i++) {
-        svg.append("text")
-          .text(format(timestamps[i])).style("font-size", "70%")
-          .attr("x", Number(elements[i].getAttribute("cx")) - Number(elements[i].getAttribute("r"))-Number(elements[i].getAttribute("stroke-width")))
-          .attr("y", 20+Number(elements[i].getAttribute("cy")) + Number(elements[i].getAttribute("r")) + Number(elements[i].getAttribute("stroke-width")));
+          var x_value = Number(elements[i].getAttribute("cx")) - Number(elements[i].getAttribute("r"))-Number(elements[i].getAttribute("stroke-width"));
+          var y_value = 10+Number(elements[i].getAttribute("cy")) + Number(elements[i].getAttribute("r")) + Number(elements[i].getAttribute("stroke-width"));
+          svg.append("text")
+            .text(format(timestamps[i])).style("font-size", "70%")
+            .attr("x", x_value)
+            .attr("y", y_value)
+            .attr("transform", "rotate(45," + x_value + "," + y_value +")");
         }
       }
     }

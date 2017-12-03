@@ -159,7 +159,6 @@ function InstanceMap() {
     setProjection: function(element) {
       var projection = d3.geo.equirectangular()
         .center([-55.908333, -18.19638])
-      //.rotate([4.4, 0])
         .scale(width)
         .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
       var path = d3.geo.path()
