@@ -1,16 +1,23 @@
 ﻿year,name,img,wiki,section
 "1500","Chegada dos portugueses ao Brasil","imgs/chegada.png","Descoberta_do_Brasil",0
+"1516","Construção do primeiro engenho no Brasil","imgs/engenho-no-brasil-colonial.jpg","Ciclo_da_cana-de-açúcar",3
 "1532","Criação do sistema de Capitanias Heriditárias","imgs/capitanias.jpg","Capitanias_do_Brasil",0
 "1549","Salvador vira Capital do Brasil","imgs/salvador.jpg","Lista_de_capitais_do_Brasil",0
 "1580","União Ibérica: Brasil passa a ser domínio espanhol","imgs/uniao-iberica.png","União_Ibérica",0
+"1624","Crescimento do Quilombo dos Palmares devido aos conflitos em vigor","imgs/quilombo_palmares.jpg","Quilombo_dos_Palmares",0
 "1640","Fim da União Ibérica","imgs/joaoIVIV.jpg","Restauração_da_Independência",0
+"1645","Insurreição Pernambucana","imgs/Guerra-dos-Guararapes1.jpg","Insurreição_Pernambucana",0
+"1654","Início das campanhas de Bandeirantes","imgs/bandeirantes1.jpg","Bandeirantes",0
 "1680","Proibição de escravidão indígena","imgs/Slaved_guarani_debret.jpg","Escravidão_indígena_no_Brasil",0
+"1695","Morte de Zumbi dos Palmares","imgs/repressao_palmares.jpg","Quilombo_dos_Palmares",3
 "1705","Ciclo do Ouro, Minas Gerais","imgs/ciclo-do-ouro.png","Ciclo_do_ouro",0
 "1719","Quintos do Ouro","imgs/quintos.jpg","Quinto_do_ouro",0
 "1763","Rio de Janeiro vira Capital do Brasil","imgs/rio_de_janeiro.jpg","Lista_de_capitais_do_Brasil",0
 "1785","Proibição de Indústria no Brasil","imgs/escravos_trabalhando.jpg","Indústria_no_Brasil",2
 "1808","Chegada da Corte Portuguesa no Brasil","imgs/chegada-familia-real.jpg","Transferência_da_corte_portuguesa_para_o_Brasil",0
 "1821","Independência do Brasil","imgs/independencia_brasil_1.jpg","Independência_do_Brasil",0
+"1831","Lei Feijó","imgs/navio-negreiro.jpg","Lei_Feijó",0
+"1845","Lei Inglês de Supressão do Comércio de Escravos","imgs/bill_aberdeen.jpg","Bill_Aberdeen",1
 "1850","Lei de Eusébio de Queirós","imgs/eusebio.jpg","Lei_Eusébio_de_Queirós",0
 "1871","Lei do Ventre Livre","imgs/ventre_livre.jpg","Lei_do_Ventre_Livre",0
 "1888","Lei Áurea","imgs/abolicao.jpg","Lei_Áurea",0
