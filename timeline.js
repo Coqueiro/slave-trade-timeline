@@ -1,6 +1,17 @@
 window.play = false;
 window.playWithDescPause = true;
 
+// https://github.com/bpostlethwaite/colormap good library to create palette codes with js
+
+// viridis color scale http://tristen.ca/hcl-picker/#/hlc/6/1/32202D/FEE563
+// window.colors = ["#32202D","#3C475D","#2B757E","#3EA382","#90CA6E","#FEE563"]; 
+
+// viridis with higher alpha
+// window.colors = ["#331F30","#384762","#007683","#17A482","#85CC65","#FEE54F"]; 
+
+// custom color palette (more hue dispersion and less luminosity) http://tristen.ca/hcl-picker/#/hlc/6/1/733C32/F6C357
+window.colors = ["#763A30","#895170","#5C7EA4","#09A79C","#7DC065","#F8C24C"];
+
 window.ImportData();
 window.LoadScreen();
 
@@ -16,6 +27,10 @@ function LoadScreen() {
     window.InstanceTimeline();
   }, 500);
   
+  setTimeout(function() { 
+    window.InstanceLinechart();
+  }, 750);
+
   setTimeout(function() {
     window.UpdateData();
   }, 1000);
@@ -30,6 +45,11 @@ function DoneResizing(){
   var timelineNode = document.getElementById("timeline");
   while (timelineNode.firstChild) {
     timelineNode.removeChild(timelineNode.firstChild);
+  }
+  
+  var linechartNode = document.getElementById("linechart");
+  while (linechartNode.firstChild) {
+    linechartNode.removeChild(linechartNode.firstChild);
   }
 
   window.LoadScreen();
@@ -130,7 +150,6 @@ function Coordinates(region) {
   return _.find(window.regionCoordinates, (regionCoordinate) => { return regionCoordinate.region == region });
 }
 
-window.AAAAA = -30;
 function SlaveObjects(year) {
   
   var slaveDatas = _.filter(window.data, (data) => { return Number(data.year) == year && Number(data.quantity) != 0 });
@@ -142,7 +161,7 @@ function SlaveObjects(year) {
       latitude: coordinates.latitude,
       longitude: coordinates.longitude,
       radius: Math.sqrt(slaveData.quantity)/3,
-      fillKey: "BRA",
+      fillKey: coordinates.state,
       quantity: slaveData.quantity
     };
   });
@@ -151,7 +170,7 @@ function SlaveObjects(year) {
 }
 
 function InstanceMap() {
-  var width = document.getElementById("graph-panel").offsetWidth*0.7;
+  var width = document.getElementById("graph-panel").offsetWidth*0.5;
 
   window.map = new Datamap({
     scope: 'bra',
@@ -169,9 +188,9 @@ function InstanceMap() {
       borderWidth: 0,
       borderOpacity: 0,
       borderColor: '#FFFFFF',
-      popupOnHover: true, // True to show the popup while hovering
+      popupOnHover: true,
       radius: null,
-      popupTemplate: function(geography, data) { // This function should just return a string
+      popupTemplate: function(geography, data) {
         return '<div class="hoverinfo"><strong>' + data.name + '</strong></div>';
       },
       fillOpacity: 0.75,
@@ -187,7 +206,12 @@ function InstanceMap() {
     },
     fills: {
       defaultFill: '#ABDDA4',
-      BRA: 'green'
+      BRA: 'green',
+      AM: window.colors[0],
+      BA: window.colors[1],
+      PE: window.colors[2],
+      SUD: window.colors[3],
+      OTHER: window.colors[4]
     }
   });
 };
@@ -208,6 +232,84 @@ function InstanceTimeline() {
   window.radiusTotal = Number(d3.selectAll(".timeline-event")[0][0].getAttribute("r")) + Number(d3.selectAll(".timeline-event")[0][0].getAttribute("stroke-width"));
   window.cxPositionMin = Number(d3.selectAll(".timeline-event")[0][0].getAttribute("cx"));
   window.cxPositionMax = Number(d3.selectAll(".timeline-event")[0].last().getAttribute("cx"));
+}
+
+function InstanceLinechart() {
+  var divWidth = document.getElementById("graph-panel").offsetWidth;
+  var divHeight = document.getElementById("graph-panel").offsetHeight;
+
+  var margin = {top: Math.ceil(divHeight*0.008), right: 0, bottom: 0, left: Math.ceil(divWidth*0.02)};
+  var width = window.cxPositionMax - window.cxPositionMin;
+  var height = divHeight*0.25;
+
+  var x = d3.time.scale().range([0, width]);
+  var y = d3.scale.linear().range([height, 0]);
+
+  var yAxis = d3.svg.axis().outerTickSize(0).scale(y)
+  .orient("right").ticks(5);
+
+  var quantityline = d3.svg.line()	
+  .x(function(d) { return x(d.year); })
+  .y(function(d) { return y(d.quantity); });
+
+  var svg = d3.select("#linechart")
+  .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+      .attr("transform", 
+          "translate(" + margin.left + "," + margin.top + ")");
+
+  d3.csv("data/slave-trade-quantities-state.csv", function(error, data) {
+    data.forEach(function(d) {
+        d.quantity = Number(d.quantity);
+    });
+
+    x.domain(d3.extent(data, function(d) { return d.year; }));
+    y.domain([0, d3.max(data, function(d) { return d.quantity; })]);
+
+    var dataNest = d3.nest()
+      .key(function(d) {return d.state;})
+      .entries(data);
+
+      legendSpace = width/dataNest.length;
+
+    dataNest.forEach(function(d,i) { 
+      
+      svg.append("path")
+        .attr("class", "line")
+        .style("stroke", function() {
+            return d.color = window.colors[i]; })
+        .attr("id", 'tag'+d.key.replace(/\s+/g, ''))
+        .attr("d", quantityline(d.values));
+
+      svg.append("text")
+        .attr("x", margin.left*5 + (legendSpace/2))
+        .attr("y", Math.ceil(divHeight*0.03)*(1.2*i+1))
+        .attr("class", "legend")
+        .style("fill", function() {
+            return d.color = window.colors[i]; }) 
+        .on("click", function(){
+            var active = d.active ? false : true,
+            newOpacity = active ? 0 : 1,
+            textOpacity = active? 0.2 : 1;
+
+            d3.select("#tag"+d.key.replace(/\s+/g, ''))
+                .transition().duration(100) 
+                .style("opacity", newOpacity); 
+            d.active = active;
+            d3.select(this).style("opacity", textOpacity);
+            })  
+        .text(d.key); 
+    });
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+
+  });
+
+  setTimeout(function() {d3.selectAll(".tick")[0][0].style.visibility = "hidden";},100);
 }
 
 function UpdateArrow(year) {

@@ -5,9 +5,11 @@
 </head>
 <!DOCTYPE html>
 <meta charset="utf-8">
+
 <body>
     <div class="container-fluid">
-        <div id="graph-panel" class="panel panel-default" style="float: left; width:50%">
+        <div id="graph-panel" class="panel panel-default" style="float: left; width:50%; padding-top: 1%">
+            <div id="linechart"></div>
             <img id="arrow" src="imgs/2000px-Dark_Green_Arrow_Down.svg.png" style="position: relative; width: 20px; height: 20px">
             <div id="timeline" style="position: inline-block"></div>
             <div class="container-fluid">
@@ -38,7 +40,7 @@
                                 onclick="ButtonStepForward()"><span class="glyphicon glyphicon-step-forward"></span></button>
                     </div>
                     <div id="ButtonReset" class="col-sm-1">
-                        <button name="ButtonReset" 
+                        <button name="ButtonReset"
                                 class="btn btn-default"
                                 onclick="ButtonReset()"><span class="glyphicon glyphicon-refresh"></span></button>
                     </div>
@@ -60,9 +62,9 @@
                     <h4 id="year" class="col-sm">1560</h4>
                 </div>
             </div>
-            <div id="map" style="position: relative; width: 80%; height: 60%;"></div>
+            <div id="map" style="position: relative; width: 80%; height: 45%;"></div>
         </div>
-        <div id="text-panel" style="float: left; position: relative; padding-left:10%; width:50%">
+        <div id="text-panel" style="float: left; position: relative; padding-left:5%; width:50%">
             </br></br></br></br></br>
             <h3 id="title-event"><span class="glyphicon glyphicon-book"></span>  Carregando...</h3>
             </br>
