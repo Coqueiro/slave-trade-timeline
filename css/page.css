@@ -45,7 +45,7 @@ path {
 }
 
 .legend {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     text-anchor: middle;
 }
@@ -53,4 +53,24 @@ path {
 .legend:hover {
     font-size: 120%;
     cursor: hand;
+}
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+.moving_line line {
+    stroke: green;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+  }
+  
+.moving_line path {
+stroke-width: 0;
 }

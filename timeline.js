@@ -134,6 +134,7 @@ function UpdateData() {
   window.ChangeDescription(window.year);
   window.UpdateStatus(window.year);
   window.UpdateArrow(window.year);
+  // window.UpdateMovingLine(window.year);
 }
 
 function PlayTimeline() {
@@ -156,8 +157,9 @@ function SlaveObjects(year) {
 
   var slaveObjects = _.map(slaveDatas, (slaveData) => {
     var coordinates = window.Coordinates(slaveData.region);
+  
     return {
-      name: "Desembarque de escravos: ",
+      port: slaveData.region,
       latitude: coordinates.latitude,
       longitude: coordinates.longitude,
       radius: Math.sqrt(slaveData.quantity)/3,
@@ -166,7 +168,9 @@ function SlaveObjects(year) {
     };
   });
 
-  return slaveObjects;
+  var slaveStateData = _.find(window.dataStates, (data) => { return Number(data.year) == year && data.state == "Total" });
+
+  return { regionData: slaveObjects, total: slaveStateData?slaveStateData.quantity:0 };
 }
 
 function InstanceMap() {
@@ -257,59 +261,79 @@ function InstanceLinechart() {
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
   .append("g")
-      .attr("transform", 
+      .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-  d3.csv("data/slave-trade-quantities-state.csv", function(error, data) {
-    data.forEach(function(d) {
-        d.quantity = Number(d.quantity);
-    });
+  window.sgv_linechart = svg;
 
-    x.domain(d3.extent(data, function(d) { return d.year; }));
-    y.domain([0, d3.max(data, function(d) { return d.quantity; })]);
-
-    var dataNest = d3.nest()
-      .key(function(d) {return d.state;})
-      .entries(data);
-
-      legendSpace = width/dataNest.length;
-
-    dataNest.forEach(function(d,i) { 
-      
-      svg.append("path")
-        .attr("class", "line")
-        .style("stroke", function() {
-            return d.color = window.colors[i]; })
-        .attr("id", 'tag'+d.key.replace(/\s+/g, ''))
-        .attr("d", quantityline(d.values));
-
-      svg.append("text")
-        .attr("x", margin.left*5 + (legendSpace/2))
-        .attr("y", Math.ceil(divHeight*0.03)*(1.2*i+1))
-        .attr("class", "legend")
-        .style("fill", function() {
-            return d.color = window.colors[i]; }) 
-        .on("click", function(){
-            var active = d.active ? false : true,
-            newOpacity = active ? 0 : 1,
-            textOpacity = active? 0.2 : 1;
-
-            d3.select("#tag"+d.key.replace(/\s+/g, ''))
-                .transition().duration(100) 
-                .style("opacity", newOpacity); 
-            d.active = active;
-            d3.select(this).style("opacity", textOpacity);
-            })  
-        .text(d.key); 
-    });
-
-    svg.append("g")
-        .attr("class", "y axis")
-        .call(yAxis);
-
+  window.dataStates.forEach(function(d) {
+      d.quantity = Number(d.quantity);
   });
 
-  setTimeout(function() {d3.selectAll(".tick")[0][0].style.visibility = "hidden";},100);
+  x.domain(d3.extent(window.dataStates, function(d) { return d.year; }));
+  y.domain([0, d3.max(window.dataStates, function(d) { return d.quantity; })]);
+
+  var make_x_axis = d3.svg.axis().scale(x);
+  window.x_axis_line = make_x_axis;
+  make_x_axis = make_x_axis.tickValues([1600, 1700, 1800]);
+
+  var make_y_axis = d3.svg.axis().scale(y).orient("left").tickValues([1, 1000000, 2000000, 3000000]);
+
+  var dataNest = d3.nest()
+    .key(function(d) {return d.state;})
+    .entries(window.dataStates);
+
+    legendSpace = width/dataNest.length;
+
+  dataNest.forEach(function(d,i) { 
+    
+    svg.append("path")
+      .attr("class", "line")
+      .style("stroke", function() {
+          return d.color = window.colors[i]; })
+      .attr("id", 'tag'+d.key.replace(/\s+/g, ''))
+      .attr("d", quantityline(d.values));
+
+    svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", "translate(0," + height + ")")
+      .call(make_x_axis
+          .tickSize(-height, 0, 0)
+          .tickFormat("")
+    )
+
+    svg.append("g")            
+    .attr("class", "grid")
+    .call(make_y_axis
+        .tickSize(-width, 0, 0)
+        .tickFormat("")
+  )
+
+    svg.append("text")
+      .attr("x", margin.left*5 + (legendSpace/2))
+      .attr("y", Math.ceil(divHeight*0.07 + divHeight*0.05*0.5*i))
+      .attr("class", "legend")
+      .style("fill", function() {
+          return d.color = window.colors[i]; }) 
+      .on("click", function(){
+          var active = d.active ? false : true,
+          newOpacity = active ? 0 : 1,
+          textOpacity = active? 0.3 : 1;
+
+          d3.select("#tag"+d.key.replace(/\s+/g, ''))
+              .transition().duration(100) 
+              .style("opacity", newOpacity); 
+          d.active = active;
+          d3.select(this).style("opacity", textOpacity);
+          })  
+      .text(d.key); 
+  });
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
+
+  setTimeout(function() {d3.selectAll(".tick")[0][42].style.visibility = "hidden";} ,100);
 }
 
 function UpdateArrow(year) {
@@ -319,6 +343,25 @@ function UpdateArrow(year) {
   document.getElementById('arrow').style.top = cyPosition - 15;
 }
 
+// function UpdateMovingLine(year) {
+//   //VAMOS PARAR DE DESTRUIR E CRIAR ESSE OBJETO, ELE VAI SER CRIADO NA INSTANCIA DA TIMELINE E SUA PROPRIEDADE TRANSLATE VAI SER MODIFICADA
+//   var width = window.cxPositionMax - window.cxPositionMin;
+
+//   var movingLineNode = document.getElementById("moving_line");
+
+//   if(movingLineNode)
+//     while (movingLineNode.firstChild) {
+//       movingLineNode.removeChild(movingLineNode.firstChild);
+//     }
+
+//   window.sgv_linechart.append("g")  
+//   .attr("id", "moving_line")          
+//   .attr("class", "moving_line")
+//   .call(window.x_axis_line.tickValues([year])
+//       .tickSize(window.cxPositionMax - window.cxPositionMin, 0, 0)
+//       .tickFormat("")
+//   )
+// }
 
 function TimelineYear(year) {
   window.ChangeButtonPlay(false);
@@ -328,10 +371,11 @@ function TimelineYear(year) {
 
 function UpdateStatus(year) {
   let slaveObjects = window.SlaveObjects(year);
-  document.getElementById("slaveQuantity").innerHTML = '    ' + _.reduce(slaveObjects, (memo, num) => { return Number(memo) + Number(num.quantity) }, 0);
-  window.map.bubbles(slaveObjects, {
+  document.getElementById("slaveQuantity").innerHTML = '    ' + _.reduce(slaveObjects.regionData, (memo, num) => { return Number(memo) + Number(num.quantity) }, 0);
+  document.getElementById("slaveCumulative").innerHTML = '    ' + slaveObjects.total;
+  window.map.bubbles(slaveObjects.regionData, {
     popupTemplate: function(geo, data) {
-      return "<div class='hoverinfo'>" + data.name + "" + data.quantity;
+      return "<div class='hoverinfo'>" + "Desembarque de escravos em " + data.port + ": " + data.quantity;
     }
   });
 }
@@ -361,6 +405,15 @@ function ImportData() {
     dataType: "text",
     success: function(data) {
       window.historyData = $.csv.toObjects(data);
+    }
+  });
+  
+  $.ajax({
+    type: "GET",
+    url: "data/slave-trade-quantities-state.csv",
+    dataType: "text",
+    success: function(data) {
+      window.dataStates = $.csv.toObjects(data);
     }
   });
 
