@@ -101,10 +101,11 @@ Os seguintes recursos foram utilizadas neste projeto:
 - [The Atlantic Slave Trade in Two Minutes](http://www.slate.com/articles/life/the_history_of_american_slavery/2015/06/animated_interactive_of_the_history_of_the_atlantic_slave_trade.html);
 - [Rethink GUERNICA](http://guernica.museoreinasofia.es/cronologia/en/#).
 
-## Próximos passos
+## Próximos passos (em ordem de prioridade)
 
+- Adição de opção de narrativa em áudio paralela à visualização (com modo auto-play);
+- Adição de identificadores geográficos dos acontecimentos históricos no mapa do Brasil;
 - Melhora dos fluxos de renderização da visualização e garantir sicronia necessária dos elementos;
-- Adição de opção de narrativa em áudio sobre a visualização;
 - Melhorar reponsividade da página para resoluções e aparelhos distintos;
 - Melhora de conteúdo e elementos visuais em geral.
 
