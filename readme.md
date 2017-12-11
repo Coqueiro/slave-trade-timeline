@@ -10,9 +10,9 @@ O projeto pode ser acessado [online](https://coqueiro.github.io/slave-trade-time
 
 ## Funcionamento da visualização
 
-A visualização é composta de quatro partes principais: um **mapa** do Brasil com as ocorrências de desembarque, uma **linha do tempo** com acontecimento históricos sobre o Brasil, um **gráfico de linhas** expressando a quantidade acumulada de desembarques por região e do lado direito um **texto informativo** sobre cada acontecimento históricos, consultado dinamicamente da Wikipédia. Todos os elementos da visualização reagem às mudanças na linha do tempo, que exibe a passagem dos anos. 
+A visualização é composta de quatro partes principais: um **mapa** do Brasil com as ocorrências de desembarque, uma **linha do tempo** com acontecimentos históricos sobre o Brasil, um **gráfico de linhas** expressando a quantidade acumulada de desembarques por região e do lado direito um **texto informativo** sobre cada acontecimento histórico, consultado dinamicamente da Wikipédia. Todos os elementos da visualização reagem às mudanças na linha do tempo, que exibe a passagem dos anos. 
 
-Cada bola verde da linha do tempo pode exibe o ano e o acontecimento histórico que representa com a passagem do ponteiro por cima, e, ao serem pressionadas, avançam para o acontecimento histórico específico. As bolhas no mapa do Brasil, que representam os desembarques de escravos, exibem dados numéricos e geográficos com a passagem do ponteiro por cima. O texto informativo que vem da Wikipédia retem todos os hyperlinks originais da página, possibilitando o aprofundamento dos temas.
+Cada bola verde da linha do tempo pode exibe o ano e o acontecimento histórico que representa com a passagem do ponteiro por cima, e, ao serem pressionadas, avançam para o acontecimento histórico específico. As bolhas no mapa do Brasil, que representam os desembarques de escravos, exibem dados numéricos e geográficos com a passagem do ponteiro por cima. O texto informativo que vem da Wikipédia retém todos os hyperlinks originais da página, possibilitando o aprofundamento dos temas.
 
 Logo acima do mapa existem alguns indicadores numéricos representando as quantidades totais de **desembarques** naquele ano, a quantidade **total** de desembarques acumulados e o **ano** presente da linha do tempo. 
 
@@ -21,8 +21,8 @@ Acima dos indicadores numéricos estão os controladores da linha do tempo da vi
 - :arrow_forward: O botão de reprodução, avança a linha do tempo de ano em ano, 5 anos por segundo. Exibe o "botão de pausa";
 - O botão de pausa: Pausa o avanço da linha do tempo. Exibe o "botão de reprodução";
 - :rewind: e :fast_forward: : Os botões de recuo e avanço manual, permitindo a manipulação manual da linha do tempo;
-- Os botões :arrow_backward: e :arrow_forward: com uma barra: Os botões de recuo e avanço para o próximo acontecimento histórico.
-- :repeat: : Este botão reseta a linha do tempo;
+- Os botões :arrow_backward: e :arrow_forward: com uma barra: Os botões de recuo e avanço para o próximo acontecimento histórico;
+- :repeat: : Este botão reinicia a linha do tempo;
 - Botão de "Não pausar a cada evento": Evita que a reprodução automática pause a cada evento histórico. Exibe o botão de "Pausar a cada evento";
 - Botão de "Pausar a cada evento": Ativa a pausa automática a cada evento histórico. Exibe o botão de "Não pausar a cada evento".
 
@@ -30,18 +30,18 @@ Acima dos indicadores numéricos estão os controladores da linha do tempo da vi
 
 ### Início da colonização
 
-Existem evidencias históricas da chegada de escravos no Brasil durante as primeiras décadas de colonização mas os primeiros registros presentes no banco de dados remetem ao ano de 1574, em Pernambuco. Vale ressaltar que a maior presença portuguesa no Brasil colônia, no século XVI, se dava no Nordeste do país, com os engenhos de açúcar, com os primeiros desembarques acontecendo em Pernambuco e principalmente na Bahia, que abrigava a capital da colônia, Salvador.
+Existem evidencias históricas da chegada de escravos no Brasil durante as primeiras décadas de colonização, mas os primeiros registros presentes no banco de dados remetem ao ano de 1574, em Pernambuco. Vale ressaltar que a maior presença portuguesa no Brasil colônia, no século XVI, se dava no Nordeste do país, com os engenhos de açúcar, com os primeiros desembarques acontecendo em Pernambuco e principalmente na Bahia, que abrigava a capital da colônia, Salvador.
 
 Os escravos que começaram a desembarcar no Brasil seriam utilizados para o trabalho em engenhos e mantimentos importantes para a exploração da colônia. Ainda entre 1540 e 1580, a escravidão indígena também se intensifica.
 
 
 ### União Ibérica e invasões no Brasil
 
-Em 1580, com o início da União Ibérica, Brasil passa a ser domínio espanhol. Com a tomada intimidadora da Espanha, o agora rei espanhol e português, viu a oportunidade de restaurar as finanças do seu reino, depletadas em conflitos militares, tomando controle do comércio de escravos com os potugueses, tendo o cuidado de mander parte significativa dos privilégios dos comerciantes portugueses.
+Em 1580, com o início da União Ibérica, Brasil passa a ser domínio espanhol. Com a tomada intimidadora da Espanha, o agora rei espanhol e português, viu a oportunidade de restaurar as finanças do seu reino, depletadas em conflitos militares, tomando controle do comércio de escravos com os portugueses, tendo o cuidado de manter parte significativa dos privilégios dos comerciantes portugueses.
 
 Com a união entre a Espanha e Portugal, as nações inglesas, holandesas e francesas passam a enxergar a colônia brasileira com um alvo, e assim começam diversas invasões do território brasileiro. Essas invasões causavam grandes distúrbios na colônia, facilitando a fuga de escravos para quilombos, o que justificou o grande crescimento que o Quilombo dos Palmares teve nesse período.
 
-Dentre as diversas invasões que ocorreram, podemos destacar as invasões holandesas em 1630, que buscavam a captura do monopólio do comércio de açúcar e fontes de suprimentos de escravos. A Holanda portanto, até a sua expulsão, controlaram o tráfico de escravos africanos para o Brasil. Os holandeses eram bem mais liberais e facilitaram bastante o comércio, recebendo apoio local de alguns senhores de engenho. Nestes anos viu-se um grande desenvolvimento do tráfico de escravos para Pernambuco.
+Dentre as diversas invasões que ocorreram, podemos destacar as invasões holandesas em 1630, que buscavam a captura do monopólio do comércio de açúcar e fontes de suprimentos de escravos. A, Holanda portanto, até a sua expulsão, controlaram o tráfico de escravos africanos para o Brasil. Os holandeses eram bem mais liberais e facilitaram bastante o comércio, recebendo apoio local de alguns senhores de engenho. Nestes anos viu-se um grande desenvolvimento do tráfico de escravos para Pernambuco.
 
 Com o fim da União Ibérica, e a retomada monárquica portuguesa do reino de Portugal, os portugueses puderam focar em recuperar seus ativos comerciais. A expulsão dos holandeses da região Nordeste deu-se na famosa Insurreição Pernambucana, onde houve a recuperação do comércio escravo e de açúcar pela coroa portuguesa. Entretanto, a Holanda, até então ocupada em guerras, só vai concordar com a tomada em 1654, com indenização de Portugal.
 
@@ -49,19 +49,19 @@ Com o fim da União Ibérica, e a retomada monárquica portuguesa do reino de Po
 
 A saída dos holandeses, hábeis comerciantes, diminuiu muito o comércio escravo para o Brasil. Ainda mais, com a colônia estabilizada, o foco passa a ser a exploração do território brasileiro, e a intensificação das campanhas de Bandeirantes, ocupando o Centro-oeste e Sul do país. Nesta época, a escravidão indígena ganha evidência, facilitadas pelas guerras intertribais entre as aldeias indígenas. O preço dos escravos africanos é muito caro para muitos colonos, e o seu transporte nestas missões não é fácil.
 
-A pressão jesuíta, que procurava a catequese do povo indígena e a necessidade da coroa portuguesa de obter lucros com o comércio de escravos africanos motivou a proibição de escravidão de novos índios pelos colonos em 1680, intensificando o comércio de escravos africanos no próximos anos. Ainda mais, esta probição acabou com a obtenção de mão de obra barata dos colonos, que passaram a atacar ainda mais os quilombos de escravos para recupera-los.
+A pressão jesuíta, que procurava a catequese do povo indígena e a necessidade da coroa portuguesa de obter lucros com o comércio de escravos africanos motivou a proibição de escravidão de novos índios pelos colonos em 1680, intensificando o comércio de escravos africanos nos próximos anos. Ainda mais, esta proibição acabou com a obtenção de mão de obra barata dos colonos, que passaram a atacar ainda mais os quilombos de escravos para recupera-los.
 
-A pressão para recuperar a mão de obra perdida com as fugas dos escravos eclodiu em diversos ataque aos principais quilombos, incluindo o Quilombo dos Palmares. em 1695 morreu o líder militar do Quilombo dos Palmares, Zumbi. Com a expansão das campanhas bandeirantes e os ataques contínuos, vários quilombos minguaram nos anos seguintes.
+A pressão para recuperar a mão de obra perdida com as fugas dos escravos eclodiu em diversos ataques aos principais quilombos, incluindo o Quilombo dos Palmares. em 1695 morreu o líder militar do Quilombo dos Palmares, Zumbi. Com a expansão das campanhas bandeirantes e os ataques contínuos, vários quilombos minguaram nos anos seguintes.
 
 ### Ciclo do Ouro e crescimento do Sul
 
 Em 1705 as missões para o Sul do Brasil começaram a identificar regiões ricas em minerais raros, e deu-se início ao Ciclo do Ouro em Minas Gerais. O fato interessante é que em 1703 a coroa portuguesa proibiu o desembarque de escravos da Nova Guiné, grande fornecedora de escravos, para o Sul do Brasil, para tentar evitar a triangulação comercial e dispersão dos seus lucros. Podemos verificar no início do Ciclo do Ouro o forte comércio de escravos para a Bahia, entretanto, uma boa parte desses escravos eram transportados para o Sul através de rios, terra e costa litorânea do Brasil, este último conhecido como cabotagem. Vários escravos começavam a trabalhar em riachos e minas minerando.
 
-Neste anos Portugal reconhecia a grande fonte de lucro que era o ouro brasileiro. Em 1719, a coroa portuguesa instaurou o Quinto, um imposto de 20% cobrado sobre todo metal extraído. Essa legislação causou grandes revoltas na colônia, mas o movimento minerário no Brasil continuou de desenvolvendo até meados deste século, o que intensificou o comércio de escravos. Ainda nesta época, o Nordeste agrícola do país ainda exigia muita mão de obra.
+Nestes anos Portugal reconhecia a grande fonte de lucro que era o ouro brasileiro. Em 1719, a coroa portuguesa instaurou o Quinto, um imposto de 20% cobrado sobre todo metal extraído. Essa legislação causou grandes revoltas na colônia, mas o movimento minerário no Brasil continuou de desenvolvendo até meados deste século, o que intensificou o comércio de escravos. Ainda nesta época, o Nordeste agrícola do país ainda exigia muita mão de obra.
 
-Em 1750 houve o Tratado de Madri entre Portugal e a Espanha, que causou uma nova divisão geográfica do Brasil, revogando o tratado de Tordesilhas, constantemente ultrapassado pelos bandeirantes. O Tratado de Madri intensificou a presença portuguesa no Sul, aumentando o seu poderio militar português e a sua presença por todo o Brasil, visto que agora os colonos ocupavam terras que percebiam a eles. A maior liberdade aumentou a comércio escravo no Brasil no próximos anos, visto que as demandas e oportunidades aumentaram.
+Em 1750 houve o Tratado de Madri entre Portugal e a Espanha, que causou uma nova divisão geográfica do Brasil, revogando o tratado de Tordesilhas, constantemente ultrapassado pelos bandeirantes. O Tratado de Madri intensificou a presença portuguesa no Sul, aumentando o seu poderio militar português e a sua presença por todo o Brasil, visto que agora os colonos ocupavam terras que percebiam a eles. A maior liberdade aumentou a comércio escravo no Brasil nos próximos anos, visto que as demandas e oportunidades aumentaram.
 
-As campanhas bandeirantes e a maior expansão geográfica do Brasil começa a estabelecer uma demanda de mão de obra para as regiões Norte do país, na Amazônia, entretanto esta demanda é bem baixa comparada com as outras regiões do país, que ainda recebiam a maior parte do recurso.
+As campanhas bandeirantes e a maior expansão geográfica do Brasil começam a estabelecer uma demanda de mão de obra para as regiões Norte do país, na Amazônia, entretanto esta demanda é bem baixa comparada com as outras regiões do país, que ainda recebiam a maior parte do recurso.
 
 Com o crescimento econômico e de presença no Sul do país, Rio de Janeiro eventualmente vira a nova capital do Brasil, aumentando a presença de escravos no Sul do país. 
 
@@ -69,32 +69,32 @@ Em 1785, com o intuito de evitar a competição comercial do Brasil contra Portu
 
 ### Ciclo do Café
 
-Se aproximando de 1800 podemos observar o início do Ciclo do Café no Rio de Janeiro, agora maior produto econômico da colônia, com a escassez das minas de Minas Gerais. O café começa a exigir um maior tráfico de escravos para o Sul do país, e portanto começamos a ver um aumento cada intenso de comércio.
+Se aproximando de 1800 podemos observar o início do Ciclo do Café no Rio de Janeiro, agora maior produto econômico da colônia, com a escassez das minas de Minas Gerais. O café começa a exigir um maior tráfico de escravos para o Sul do país, e, portanto, começamos a ver um aumento cada intenso de comércio.
 
-Com a pressão napoleônica na Europa, a corte portuguesa é transferida para o Brasil. Desta forma, o Brasil viu um grande crescimento econômico e um grande crescimento do comércio de escravos para todas as regiões especialmente para o Sul. Em 1810, D. João se compromete a abolir o tráfico escravo mas não cumpre. Em 1815, o Brasil deixa de ser colônia e o Congresso de Viena abole a o tráfico acima do Equador.
+Com a pressão napoleônica na Europa, a corte portuguesa é transferida para o Brasil. Desta forma, o Brasil viu um grande crescimento econômico e um grande crescimento do comércio de escravos para todas as regiões especialmente para o Sul. Em 1810, D. João se compromete a abolir o tráfico de escravos mas não cumpre. Em 1815, o Brasil deixa de ser colônia e o Congresso de Viena abole a o tráfico acima do Equador.
 
-### Pressão anti-escravista da Inglaterra
+### Pressão antiescravista da Inglaterra
 
 Inglaterra pressiona bastante a coroa portuguesa para o fim da escravidão, movimento que surgiu logo após a Revolução Industrial, amparado por motivos éticos e religiosos. Em 1825, com o fim da Independência do Brasil, o Brasil assina o tratado de Reconhecimento da Independência com a Grã-Bretanha, e na ocasião se compromete a acabar com a escravidão em 3 anos. Algumas leis entram em vigor nos próximos anos, proibindo a escravidão, mas ninguém as cumpre.
 
 A Lei Feijó, em 1831, ficou conhecida como a lei "para inglês ver". Apesar de resultar na queda do comércio escravo nos anos próximos, esta lei tinha algumas exceções que foram logo exploradas e, por várias vezes, a lei era descumprida. O comércio escravo ainda trazia muitos lucros, portanto era interessante para os comerciantes contornar essas "adversidades".
 
-Entretanto, a pressão inglesa não diminuiu. Em 1845 o Parlamento do Reino Unido propós a lei de supressão do comércio de escravos, que considerava o tráfico de escravos como pirataria, e passou a aprender navios negreiros em direção para o Brasil.
+Entretanto, a pressão inglesa não diminuiu. Em 1845 o Parlamento do Reino Unido propôs a lei de supressão do comércio de escravos, que considerava o tráfico de escravos como pirataria, e passou a aprender navios negreiros em direção para o Brasil.
 
 Devido às fortes pressões internacionais, em 1850 foi aprovada a Lei de Eusébio de Queirós, que efetivamente aboliu o a entrada de escravo no Brasil, finalizando o comércio escravo nos próximos anos.
 
-Nos anos seguintes viu-se um grande movimento anti-escravista, com leis como a Lei do Ventre eLivre em 1871 Lei dos Sexagenários em 1783, ainda sobre pressão social e dos ingleses. Só em 1888 houve a abolição completa da escravidão no Brasil, com a Lei Áurea. 
+Nos anos seguintes viu-se um grande movimento antiescravista, com leis como a Lei do Ventre Livre em 1871 Lei dos Sexagenários em 1783, ainda sobre pressão social e dos ingleses. Só em 1888 houve a abolição completa da escravidão no Brasil, com a Lei Áurea. 
 
 
 ## Especificações do projeto
 
-Os seguintes recursos foram utilizadas neste projeto:
+Os seguintes recursos foram utilizados neste projeto:
 
 - [Banco de Dados do Tráfico Transatlântico de Escravos](http://www.slavevoyages.org/) como fonte de dados acerca dos desembarques geolocalizados de escravos no Brasil;
 - [D3](https://github.com/d3/d3) para a criação de todos os elementos visualizações dinâmicos;
 - [Bootstrap](https://github.com/twbs/bootstrap) para o design e organização de elementos da visualização;
 - [Datamaps](https://github.com/markmarkoh/datamaps) para a criação do mapa e bolhas representando o desembarque de escravos;
-- [TopoJSON](https://github.com/topojson/topojson) para o enconding da topologia do Brasil;
+- [TopoJSON](https://github.com/topojson/topojson) para o encoding da topologia do Brasil;
 - [Timeknots](https://github.com/alangrafu/timeknots) (biblioteca modificada para o projeto) para a criação da timeline de acontecimentos históricos;
 - [jQuery](https://github.com/jquery/jquery) para a manipulação de elementos da visualização;
 - [Underscore](https://github.com/jashkenas/underscore) como biblioteca de funções utilitárias;
@@ -123,7 +123,7 @@ Os seguintes recursos foram utilizadas neste projeto:
 
 - Adição de opção de narrativa em áudio paralela à visualização (com modo auto-play);
 - Adição de identificadores geográficos dos acontecimentos históricos no mapa do Brasil;
-- Melhora dos fluxos de renderização da visualização e garantir sicronia necessária dos elementos;
+- Melhora dos fluxos de renderização da visualização e garantir sincronia necessária dos elementos;
 - Melhorar responsividade da página para resoluções e aparelhos distintos;
 - Melhora de conteúdo e elementos visuais em geral.
 
