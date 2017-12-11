@@ -88,7 +88,7 @@ Os seguintes recursos foram utilizadas neste projeto:
 - [João Carlos Nara Júnior](https://www.escavador.com/sobre/9528774/joao-carlos-nara-junior), diretor do Escritório Técnico do Museu Nacional e doutorando em História pela UFRJ;
 - [Joao Daniel Lima de Almeida](https://www.escavador.com/sobre/2130224/joao-daniel-lima-de-almeida), professor graduado em História pela UFF e com mestrado e doutorado em Relações Internacionais pela PUC;
 - [Cronologia do Brasil Colônia](https://www.historiadobrasil.net/colonia/cronologia.htm);
-- **As diversas páginas da Wikipédia utilizadas** podem ser acessadas através do arquivo [historic-facts](https://github.com/Coqueiro/slave-trade-timeline/blob/master/data/historic-facts.csv). Para o acesso individual, basta concatenar a URL base da Wikipédia `https://pt.Wikipédia.org/wiki/` com o valor na coluna `wiki`.
+- **As diversas páginas da Wikipédia utilizadas** que podem ser acessadas através do arquivo [historic-facts](https://github.com/Coqueiro/slave-trade-timeline/blob/master/data/historic-facts.csv). Para o acesso individual, basta concatenar a URL base da Wikipédia `https://pt.Wikipédia.org/wiki/` com o valor na coluna `wiki`.
 
 ## Referências de visualização
 
