@@ -134,7 +134,7 @@ function UpdateData() {
   window.ChangeDescription(window.year);
   window.UpdateStatus(window.year);
   window.UpdateArrow(window.year);
-  // window.UpdateMovingLine(window.year);
+  window.UpdateMovingLine(window.year);
 }
 
 function PlayTimeline() {
@@ -205,7 +205,7 @@ function InstanceMap() {
       highlightBorderWidth: 2,
       highlightBorderOpacity: 1,
       highlightFillOpacity: 0.85,
-      exitDelay: 10, // Milliseconds
+      exitDelay: 1,
       key: JSON.stringify
     },
     fills: {
@@ -215,7 +215,7 @@ function InstanceMap() {
       BA: window.colors[1],
       PE: window.colors[2],
       SUD: window.colors[3],
-      OTHER: window.colors[4]
+      OTHER: window.colors[5]
     }
   });
 };
@@ -273,10 +273,8 @@ function InstanceLinechart() {
   x.domain(d3.extent(window.dataStates, function(d) { return d.year; }));
   y.domain([0, d3.max(window.dataStates, function(d) { return d.quantity; })]);
 
-  var make_x_axis = d3.svg.axis().scale(x);
-  window.x_axis_line = make_x_axis;
-  make_x_axis = make_x_axis.tickValues([1600, 1700, 1800]);
-
+  var make_x_axis = d3.svg.axis().scale(x).tickValues([1600, 1700, 1800]);
+  var moving_line = d3.svg.axis().scale(x).tickValues([1500]);
   var make_y_axis = d3.svg.axis().scale(y).orient("left").tickValues([1, 1000000, 2000000, 3000000]);
 
   var dataNest = d3.nest()
@@ -302,6 +300,15 @@ function InstanceLinechart() {
           .tickFormat("")
     )
 
+    svg.append("g")
+    .attr("id", "moving_line")
+    .attr("class", "moving_line")
+    .attr("transform", "translate(0," + height + ")")
+    .call(moving_line
+        .tickSize(-height, 0, 0)
+        .tickFormat("")
+    )
+
     svg.append("g")            
     .attr("class", "grid")
     .call(make_y_axis
@@ -310,8 +317,8 @@ function InstanceLinechart() {
   )
 
     svg.append("text")
-      .attr("x", margin.left*5 + (legendSpace/2))
-      .attr("y", Math.ceil(divHeight*0.07 + divHeight*0.05*0.5*i))
+      .attr("x", margin.left*5 + (legendSpace/2) + (legendSpace/4)*(i-(i%3)))
+      .attr("y", Math.ceil(divHeight*0.11 + divHeight*0.05*0.5*(i%3)))
       .attr("class", "legend")
       .style("fill", function() {
           return d.color = window.colors[i]; }) 
@@ -332,8 +339,13 @@ function InstanceLinechart() {
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis);
-
-  setTimeout(function() {d3.selectAll(".tick")[0][42].style.visibility = "hidden";} ,100);
+  
+  setTimeout(function() {
+    window.x_linechart = x;
+    window.line_height = height;
+    document.getElementById("moving_line").childNodes[0].childNodes[0].getAttribute("y2")
+    d3.selectAll(".tick")[0][42].style.visibility = "hidden";
+  } ,100);
 }
 
 function UpdateArrow(year) {
@@ -343,25 +355,13 @@ function UpdateArrow(year) {
   document.getElementById('arrow').style.top = cyPosition - 15;
 }
 
-// function UpdateMovingLine(year) {
-//   //VAMOS PARAR DE DESTRUIR E CRIAR ESSE OBJETO, ELE VAI SER CRIADO NA INSTANCIA DA TIMELINE E SUA PROPRIEDADE TRANSLATE VAI SER MODIFICADA
-//   var width = window.cxPositionMax - window.cxPositionMin;
-
-//   var movingLineNode = document.getElementById("moving_line");
-
-//   if(movingLineNode)
-//     while (movingLineNode.firstChild) {
-//       movingLineNode.removeChild(movingLineNode.firstChild);
-//     }
-
-//   window.sgv_linechart.append("g")  
-//   .attr("id", "moving_line")          
-//   .attr("class", "moving_line")
-//   .call(window.x_axis_line.tickValues([year])
-//       .tickSize(window.cxPositionMax - window.cxPositionMin, 0, 0)
-//       .tickFormat("")
-//   )
-// }
+function UpdateMovingLine(year) {
+  var x_pos = window.x_linechart(year) -0.001;
+  var moving_line = document.getElementById("moving_line");
+  if(moving_line) {
+    moving_line.setAttribute("transform", "translate(" + x_pos+ "," + window.line_height + ")");
+  }
+}
 
 function TimelineYear(year) {
   window.ChangeButtonPlay(false);
