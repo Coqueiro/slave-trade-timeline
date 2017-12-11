@@ -106,6 +106,6 @@ Os seguintes recursos foram utilizadas neste projeto:
 - Adição de opção de narrativa em áudio paralela à visualização (com modo auto-play);
 - Adição de identificadores geográficos dos acontecimentos históricos no mapa do Brasil;
 - Melhora dos fluxos de renderização da visualização e garantir sicronia necessária dos elementos;
-- Melhorar reponsividade da página para resoluções e aparelhos distintos;
+- Melhorar responsividade da página para resoluções e aparelhos distintos;
 - Melhora de conteúdo e elementos visuais em geral.
 
