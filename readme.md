@@ -8,7 +8,25 @@ O link para a apresentação da proposta inicial deste projeto está disponível
 
 O projeto pode ser acessado [online](https://coqueiro.github.io/slave-trade-timeline/) ou pode ser reproduzido localmente com alguma ferramenta de criação de servidor `HTTP`, como o [http-server](https://github.com/indexzero/http-server).
 
-## Narrativa 
+## Funcionamento da visualização
+
+A visualização é composta de quatro partes principais: um **mapa** do Brasil com as ocorrências de desembarque, uma **linha do tempo** com acontecimento históricos sobre o Brasil, um **gráfico de linhas** expressando a quantidade acumulada de desembarques por região e do lado direito um **texto informativo** sobre cada acontecimento históricos, consultado dinamicamente da Wikipédia. Todos os elementos da visualização reagem às mudanças na linha do tempo, que exibe a passagem dos anos. 
+
+Cada bola verde da linha do tempo pode exibe o ano e o acontecimento histórico que representa com a passagem do ponteiro por cima, e, ao serem pressionadas, avançam para o acontecimento histórico específico. As bolhas no mapa do Brasil, que representam os desembarques de escravos, exibem dados numéricos e geográficos com a passagem do ponteiro por cima. O texto informativo que vem da Wikipédia retem todos os hyperlinks originais da página, possibilitando o aprofundamento dos temas.
+
+Logo acima do mapa existem alguns indicadores numéricos representando as quantidades totais de **desembarques** naquele ano, a quantidade **total** de desembarques acumulados e o **ano** presente da linha do tempo. 
+
+Acima dos indicadores numéricos estão os controladores da linha do tempo da visualização:
+
+- :arrow_forward: O botão de reprodução, avança a linha do tempo de ano em ano, 5 anos por segundo. Exibe o "botão de pausa";
+- O botão de pausa: Pausa o avanço da linha do tempo. Exibe o "botão de reprodução";
+- :rewind: e :fast_forward: : Os botões de recuo e avanço manual, permitindo a manipulação manual da linha do tempo;
+- The :arrow_backward: and :arrow_forward: com uma barra: Os botões de recuo e avanço para o próximo acontecimento histórico.
+- :repeat: : Este botão reseta a linha do tempo;
+- Botão de "Não pausar a cada evento": Evita que a reprodução automática pause a cada evento histórico. Exibe o botão de "Pausar a cada evento";
+- Botão de "Pausar a cada evento": Ativa a pausa automática a cada evento histórico. Exibe o botão de "Não pausar a cada evento".
+
+## Narrativa proposta
 
 ### Início da colonização
 
