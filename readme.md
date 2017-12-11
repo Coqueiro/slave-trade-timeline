@@ -2,6 +2,8 @@
 
 Existem muitas visualizações de dados do [comércio transatlântico de escravos](http://www.slavevoyages.org/), demonstrando volumes de escravos e portos de embarque, desembarque, além de outras informações granulares acerca de cada viagem, entretanto, existe pouco material que tenta interligar a história e os números. A motivação deste trabalho é disponibilizar uma nova lupa sobre os dados de desembarque de escravos no Brasil, pareando os desembarques de escravos com diversos episódios históricos de alta relevância, além de apresentar uma narrativa que permeia números e história.
 
+O link para a apresentação da proposta inicial deste projeto está disponível [aqui](https://docs.google.com/presentation/d/1k3nISpLLQ2FNC8LQSxswyaCipBSM5ihIipUMSeE1iFM/edit?usp=sharing).
+
 ## Como acessar o projeto
 
 O projeto pode ser acessado [online](https://coqueiro.github.io/slave-trade-timeline/) ou pode ser reproduzido localmente com alguma ferramenta de criação de servidor `HTTP`, como o [http-server](https://github.com/indexzero/http-server).
