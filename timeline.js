@@ -102,15 +102,6 @@ function ButtonDescription() {
 }
 
 function SwitchDescriptionType() {
-  var wikipediaDescription = document.getElementById("text-panel-wiki");
-  var storyDescription = document.getElementById("text-panel-story");
-  if(window.wikipedia) {
-    wikipediaDescription.style.display = "none";
-    storyDescription.style.display = "";
-  } else { 
-    storyDescription.style.display = "none";
-    wikipediaDescription.style.display = "";
-  }
   window.wikipedia = !window.wikipedia;
   window.ChangeDescription();
 }
@@ -118,25 +109,16 @@ function SwitchDescriptionType() {
 function ChangeDescription(year) {
   var historyDataYear = _.find(window.historyData, (historyDataYear) => { return historyDataYear.year == window.year });
   if(historyDataYear) {
-    var descriptionType = window.wikipedia?"-wiki":"-story";
-    document.getElementById("title-event" + descriptionType).innerHTML = '<span class="glyphicon glyphicon-book"></span>  ' + historyDataYear.name;
-    document.getElementById("description-image" + descriptionType).src = historyDataYear.img;
-    if(window.wikipedia) window.ChangeWikipediaDescription(historyDataYear);
+    document.getElementById("title-event").innerHTML = '<span class="glyphicon glyphicon-book"></span>  ' + historyDataYear.name;
+    document.getElementById("description-image").src = historyDataYear.img;
+    if(window.wikipedia) ChangeWikipediaDescription(historyDataYear.wiki, historyDataYear.section);
     else window.ChangeStoryDescription(historyDataYear);
+    if(window.playWithDescPause) window.ChangeButtonPlay(false);
   }
 }
 
-function ChangeWikipediaDescription(historyDataYear) {
-  WikipediaBlurb(historyDataYear.wiki, historyDataYear.section);
-  if(window.playWithDescPause) window.ChangeButtonPlay(false);
-}
-
-function ChangeStoryDescription(historyDataYear) {
-
-}
-
-function WikipediaBlurb(page, section) {
-  $('#description-wiki').wikiblurb({
+function ChangeWikipediaDescription(page, section) {
+  $('#description').wikiblurb({
     wikiURL: "https://pt.wikipedia.org/",
     apiPath: 'w',
     section: section,
@@ -146,6 +128,10 @@ function WikipediaBlurb(page, section) {
     customSelector: '',
     callback: function(){ }
   });
+}
+
+function ChangeStoryDescription(historyDataYear) {
+  document.getElementById("description").innerHTML = "Conteúdo em progresso..."
 }
 
 function ButtonReset() {
