@@ -1,5 +1,6 @@
 window.play = false;
 window.playWithDescPause = true;
+window.wikipedia = true;
 
 // https://github.com/bpostlethwaite/colormap good library to create palette codes with js
 
@@ -100,18 +101,42 @@ function ButtonDescription() {
   else document.getElementsByName("DescButton")[0].innerHTML = "Pausar a cada evento";
 }
 
+function SwitchDescriptionType() {
+  var wikipediaDescription = document.getElementById("text-panel-wiki");
+  var storyDescription = document.getElementById("text-panel-story");
+  if(window.wikipedia) {
+    wikipediaDescription.style.display = "none";
+    storyDescription.style.display = "";
+  } else { 
+    storyDescription.style.display = "none";
+    wikipediaDescription.style.display = "";
+  }
+  window.wikipedia = !window.wikipedia;
+  window.ChangeDescription();
+}
+
 function ChangeDescription(year) {
   var historyDataYear = _.find(window.historyData, (historyDataYear) => { return historyDataYear.year == window.year });
   if(historyDataYear) {
-    document.getElementById("title-event").innerHTML = '<span class="glyphicon glyphicon-book"></span>  ' + historyDataYear.name;
-    document.getElementById('description-image').src = historyDataYear.img;
-    WikipediaBlurb(historyDataYear.wiki, historyDataYear.section);
-    if(window.playWithDescPause) window.ChangeButtonPlay(false);
+    var descriptionType = window.wikipedia?"-wiki":"-story";
+    document.getElementById("title-event" + descriptionType).innerHTML = '<span class="glyphicon glyphicon-book"></span>  ' + historyDataYear.name;
+    document.getElementById("description-image" + descriptionType).src = historyDataYear.img;
+    if(window.wikipedia) window.ChangeWikipediaDescription(historyDataYear);
+    else window.ChangeStoryDescription(historyDataYear);
   }
 }
 
+function ChangeWikipediaDescription(historyDataYear) {
+  WikipediaBlurb(historyDataYear.wiki, historyDataYear.section);
+  if(window.playWithDescPause) window.ChangeButtonPlay(false);
+}
+
+function ChangeStoryDescription(historyDataYear) {
+
+}
+
 function WikipediaBlurb(page, section) {
-  $('#description').wikiblurb({
+  $('#description-wiki').wikiblurb({
     wikiURL: "https://pt.wikipedia.org/",
     apiPath: 'w',
     section: section,
