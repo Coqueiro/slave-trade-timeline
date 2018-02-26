@@ -103,6 +103,8 @@ function ButtonDescription() {
 
 function SwitchDescriptionType() {
   window.wikipedia = !window.wikipedia;
+  if(window.wikipedia) document.getElementsByName("SwitchDescButton")[0].innerHTML = "Mudar para a narrativa";
+  else document.getElementsByName("SwitchDescButton")[0].innerHTML = "Mudar para a Wikipedia";
   window.ChangeDescription();
 }
 
