@@ -133,7 +133,8 @@ function ChangeWikipediaDescription(page, section) {
 }
 
 function ChangeStoryDescription(historyDataYear) {
-  document.getElementById("description").innerHTML = "Conteúdo em progresso..."
+  var storytellingDataYear = _.find(window.storytellingData, (storytellingDataYear) => { return storytellingDataYear.year == historyDataYear.year });
+  document.getElementById("description").innerHTML = storytellingDataYear.text;
 }
 
 function ButtonReset() {
@@ -420,7 +421,16 @@ function ImportData() {
       window.historyData = $.csv.toObjects(data);
     }
   });
-  
+
+  $.ajax({
+    type: "GET",
+    url: "data/storytelling.csv",
+    dataType: "text",
+    success: function(data) {
+      window.storytellingData = $.csv.toObjects(data);
+    }
+  });
+
   $.ajax({
     type: "GET",
     url: "data/slave-trade-quantities-state.csv",
