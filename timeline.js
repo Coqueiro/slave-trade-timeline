@@ -34,6 +34,7 @@ function LoadScreen() {
 
   setTimeout(function() {
     window.UpdateData();
+    document.onkeydown = KeyPress;
   }, 1000);
 }
  
@@ -93,6 +94,22 @@ function ButtonStepForward() {
     window.year = _.find(historyData, (data) => { return data.year > window.year }).year;
   }
   window.UpdateData();
+}
+
+function KeyPress(e) {
+  e = e || window.event;
+  if (e.keyCode == '33' || e.keyCode == '37') {
+    // left arrow
+    window.ButtonBackward();
+  }
+  else if (e.keyCode == '34' || e.keyCode == '39') {
+    // right arrow
+    window.ButtonForward();
+  }
+  else if (e.keyCode == '190') {
+    // dot
+    window.SwitchDescriptionType();
+  }
 }
 
 function ButtonDescription() {
