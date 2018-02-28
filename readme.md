@@ -21,7 +21,7 @@ Acima dos indicadores numéricos estão os controladores da linha do tempo da vi
 - :arrow_forward: O botão de reprodução, avança a linha do tempo de ano em ano, 5 anos por segundo. Exibe o "botão de pausa";
 - O botão de pausa: Pausa o avanço da linha do tempo. Exibe o "botão de reprodução";
 - :rewind: e :fast_forward: : Os botões de recuo e avanço manual, permitindo a manipulação manual da linha do tempo;
-- Os botões :arrow_backward: e :arrow_forward: com uma barra: Os botões de recuo e avanço para o próximo acontecimento histórico;
+- Os botões :arrow_backward: e :arrow_forward: com uma barra: Os botões de recuo e avanço para o próximo acontecimento histórico. Os botões também pode ser ativados com as setas do teclado;
 - :repeat: : Este botão reinicia a linha do tempo;
 - Botão de "Não pausar a cada evento": Evita que a reprodução automática pause a cada evento histórico. Exibe o botão de "Pausar a cada evento";
 - Botão de "Pausar a cada evento": Ativa a pausa automática a cada evento histórico. Exibe o botão de "Não pausar a cada evento".
