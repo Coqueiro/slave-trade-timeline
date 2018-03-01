@@ -122,11 +122,12 @@ function SwitchDescriptionType() {
   window.wikipedia = !window.wikipedia;
   if(window.wikipedia) document.getElementsByName("SwitchDescButton")[0].innerHTML = "Mudar para a narrativa";
   else document.getElementsByName("SwitchDescButton")[0].innerHTML = "Mudar para a Wikipedia";
-  window.ChangeDescription();
+  var updateYear = Number(_.max(window.historyData, (historyDataYear) => { return historyDataYear.year <= window.year ? historyDataYear.year : 0 }).year);
+  window.ChangeDescription(updateYear);
 }
 
 function ChangeDescription(year) {
-  var historyDataYear = _.find(window.historyData, (historyDataYear) => { return historyDataYear.year == window.year });
+  var historyDataYear = _.find(window.historyData, (historyDataYear) => { return historyDataYear.year == year });
   if(historyDataYear) {
     document.getElementById("title-event").innerHTML = '<span class="glyphicon glyphicon-book"></span>  ' + historyDataYear.name;
     document.getElementById("description-image").src = historyDataYear.img;
