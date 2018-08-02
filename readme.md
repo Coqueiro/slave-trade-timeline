@@ -21,7 +21,7 @@ Acima dos indicadores numéricos estão os controladores da linha do tempo da vi
 - :arrow_forward: O botão de reprodução, avança a linha do tempo de ano em ano, 5 anos por segundo. Exibe o "botão de pausa";
 - O botão de pausa: Pausa o avanço da linha do tempo. Exibe o "botão de reprodução";
 - :rewind: e :fast_forward: : Os botões de recuo e avanço manual, permitindo a manipulação manual da linha do tempo;
-- Os botões :arrow_backward: e :arrow_forward: com uma barra: Os botões de recuo e avanço para o próximo acontecimento histórico. Os botões também pode ser ativados com as setas do teclado;
+- Os botões :arrow_backward: e :arrow_forward: com uma barra: Os botões de recuo e avanço para o próximo acontecimento histórico. Os botões também podem ser ativados com as setas do teclado;
 - :repeat: : Este botão reinicia a linha do tempo;
 - Botão de "Não pausar a cada evento": Evita que a reprodução automática pause a cada evento histórico. Exibe o botão de "Pausar a cada evento";
 - Botão de "Pausar a cada evento": Ativa a pausa automática a cada evento histórico. Exibe o botão de "Não pausar a cada evento".
@@ -51,7 +51,7 @@ A saída dos holandeses, hábeis comerciantes, diminuiu muito o comércio escrav
 
 A pressão jesuíta, que procurava a catequese do povo indígena e a necessidade da coroa portuguesa de obter lucros com o comércio de escravos africanos motivou a proibição de escravidão de novos índios pelos colonos em 1680, intensificando o comércio de escravos africanos nos próximos anos. Ainda mais, esta proibição acabou com a obtenção de mão de obra barata dos colonos, que passaram a atacar ainda mais os quilombos de escravos para recupera-los.
 
-A pressão para recuperar a mão de obra perdida com as fugas dos escravos eclodiu em diversos ataques aos principais quilombos, incluindo o Quilombo dos Palmares. em 1695 morreu o líder militar do Quilombo dos Palmares, Zumbi. Com a expansão das campanhas bandeirantes e os ataques contínuos, vários quilombos minguaram nos anos seguintes.
+A pressão para recuperar a mão de obra perdida com as fugas dos escravos eclodiu em diversos ataques aos principais quilombos, incluindo o Quilombo dos Palmares. Em 1695 morreu o líder militar do Quilombo dos Palmares, Zumbi. Com a expansão das campanhas bandeirantes e os ataques contínuos, vários quilombos minguaram nos anos seguintes.
 
 ### Ciclo do Ouro e crescimento do Sul
 
@@ -71,7 +71,7 @@ Em 1785, com o intuito de evitar a competição comercial do Brasil contra Portu
 
 Se aproximando de 1800 podemos observar o início do Ciclo do Café no Rio de Janeiro, agora maior produto econômico da colônia, com a escassez das minas de Minas Gerais. O café começa a exigir um maior tráfico de escravos para o Sul do país, e, portanto, começamos a ver um aumento cada intenso de comércio.
 
-Com a pressão napoleônica na Europa, a corte portuguesa é transferida para o Brasil. Desta forma, o Brasil viu um grande crescimento econômico e um grande crescimento do comércio de escravos para todas as regiões especialmente para o Sul. Em 1810, D. João se compromete a abolir o tráfico de escravos mas não cumpre. Em 1815, o Brasil deixa de ser colônia e o Congresso de Viena abole a o tráfico acima do Equador.
+Com a pressão napoleônica na Europa, a corte portuguesa é transferida para o Brasil. Desta forma, o Brasil viu um grande crescimento econômico e um grande crescimento do comércio de escravos para todas as regiões especialmente para o Sul. Em 1810, D. João se compromete a abolir o tráfico de escravos, mas não cumpre. Em 1815, o Brasil deixa de ser colônia e o Congresso de Viena abole a o tráfico acima do Equador.
 
 ### Pressão antiescravista da Inglaterra
 
@@ -81,7 +81,7 @@ A Lei Feijó, em 1831, ficou conhecida como a lei "para inglês ver". Apesar de 
 
 Entretanto, a pressão inglesa não diminuiu. Em 1845 o Parlamento do Reino Unido propôs a lei de supressão do comércio de escravos, que considerava o tráfico de escravos como pirataria, e passou a aprender navios negreiros em direção para o Brasil.
 
-Devido às fortes pressões internacionais, em 1850 foi aprovada a Lei de Eusébio de Queirós, que efetivamente aboliu o a entrada de escravo no Brasil, finalizando o comércio escravo nos próximos anos.
+Devido às fortes pressões internacionais, em 1850 foi aprovada a Lei de Eusébio de Queirós, que efetivamente aboliu a entrada de escravos no Brasil, finalizando o comércio escravo nos próximos anos.
 
 Nos anos seguintes viu-se um grande movimento antiescravista, com leis como a Lei do Ventre Livre em 1871 Lei dos Sexagenários em 1783, ainda sobre pressão social e dos ingleses. Só em 1888 houve a abolição completa da escravidão no Brasil, com a Lei Áurea. 
 
@@ -124,6 +124,6 @@ Os seguintes recursos foram utilizados neste projeto:
 - Adição de opção de narrativa em áudio paralela à visualização (com modo auto-play);
 - Adição de identificadores geográficos dos acontecimentos históricos no mapa do Brasil;
 - Melhora dos fluxos de renderização da visualização e garantir sincronia necessária dos elementos;
-- Melhorar responsividade da página para resoluções e aparelhos distintos;
+- Melhorar responsividade da página para resoluções em aparelhos distintos;
 - Melhora de conteúdo e elementos visuais em geral.
 
